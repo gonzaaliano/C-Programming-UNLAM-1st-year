@@ -1,5 +1,6 @@
 /*4.18. Confeccionar un programa que permita ingresar la fecha actual (día, mes y año) y la fecha de nacimiento
-de una persona (día, mes y año). Con ambos datos debe calcular la edad de dicha persona.*/
+de una persona (día, mes y año). Con ambos datos debe calcular la edad de dicha persona.
+RESUELTO*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,10 +9,10 @@ int main()
 {
 
     int diaNac, mesNac, anoNac, diaAct, mesAct, anoAct, edadAnos, edadMeses, edadDias;
-    printf("Ingrese la fecha actual:\n");
+    printf("Ingrese la fecha actual(aaaa, mm, dd):\n");
     scanf("%d%d%d", &anoAct, &mesAct, &diaAct);
 
-    printf("Ingrese la fecha de nacimiento\n");
+    printf("Ingrese la fecha de nacimiento (aaaa, mm, dd)\n");
     scanf("%d%d%d", &anoNac, &mesNac, &diaNac);
 
     edadAnos = anoAct - anoNac;

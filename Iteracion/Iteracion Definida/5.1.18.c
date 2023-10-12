@@ -9,3 +9,25 @@
 8 16 24 32 40 48 56 64 72
 9 18 27 36 45 54 63 72 81
 */
+
+//RESUELTO
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int tabla, num;
+
+    for (int tabla = 1; tabla <= 9; tabla++)
+    {
+        for (int num = 1; num <= 9; num++)
+        {
+            printf("%d\n", tabla * num);
+        }
+        printf("\n");
+    }
+
+    system("pause");
+    return 0;
+}

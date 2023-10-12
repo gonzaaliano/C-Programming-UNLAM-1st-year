@@ -1,36 +1,67 @@
 /*4.5. Se ingresan 3 números enteros. Informarlos en orden creciente.*/
 
+//REVISAR
+
 #include <stdio.h>
 #include <stdlib.h>
 
 int main()
 {
-    int num1, num2, num3, menor, medio, mayor;
+    int num1, num2, num3, mayor, medio, menor;
 
-    printf("Ingrese 3 numeros enteros: ");
-    scanf("%d %d %d", &num1, &num2, &num3);
+    printf("Ingrese un numero\n");
+    scanf("%d", &num1);
 
-    // Encontrar el número menor
-    if (num1 < num2)
+    printf("Ingrese un numero\n");
+    scanf("%d", &num2);
+
+    printf("Ingrese un numero\n");
+    scanf("%d", &num3);
+
+    if (num1 > num2 && num1 > num3)
     {
-        menor = num1;
-        medio = (num2 < num3) ? num2 : num3;
-        mayor = (num2 < num3) ? num3 : num2;
+        mayor = num1;
+
+        if (num2 > num3)
+        {
+            medio = num2;
+            menor = num3;
+        }
+        else
+            medio = num3;
+        menor = num2;
+    }
+    if (num2 > num1 && num2 > num3)
+    {
+        mayor = num2;
+        if (num1 > num3)
+        {
+            medio = num1;
+            menor = num3;
+        }
+        else
+        {
+            medio = num3;
+            menor = num1;
+        }
     }
     else
     {
-        menor = num2;
-        medio = (num1 < num3) ? num1 : num3;
-        mayor = (num1 < num3) ? num3 : num1;
-    }
-    if (medio > mayor)
-    {
-        int temp = medio;
-        medio = mayor;
-        mayor = temp;
+        mayor = num3;
+        if (num1 > num2)
+        {
+            medio = num1;
+            menor = num2;
+        }
+        else
+        {
+            medio = num2;
+            menor = num1;
+        }
     }
 
-    printf("Los numeros ordenados en orden creciente son: %d %d %d", menor, medio, mayor);
+    printf("Los numeros en orden creciente son: %d, %d, %d\n", menor, medio, mayor);
 
+    system("pause");
     return 0;
 }

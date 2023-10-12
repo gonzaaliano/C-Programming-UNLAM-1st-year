@@ -9,9 +9,9 @@ int main()
 
     int i = 100;
 
-    for (i = 100; i < 500; i += 2)
+    for (i = 100; i <= 500; i += 2)
     {
-        printf("%d ", i);
+        printf("%2d ", i);
     }
 
     system("pause");

@@ -9,7 +9,7 @@ int main()
 
     for (i = 100; i >= 50; i -= 5)
     {
-        suma += i;
+        suma += 1 * i;
     }
     printf("La suma es: %d ", suma);
 }

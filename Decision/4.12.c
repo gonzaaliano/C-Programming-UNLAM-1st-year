@@ -1,6 +1,6 @@
 /*4.12. Ingresar el valor de la hora y la cantidad de horas trabajadas por un empleado. Calcular su sueldo tomando
 en cuenta que recibe un premio de $500 si trabajo más de 50 horas y, además, si trabajó más de 150 horas
-se le otorgan $1000 adicionales. RSUELTO*/
+se le otorgan $1000 adicionales. RESUELTO*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,15 +17,15 @@ int main()
 
     sueldo = valorXHora * horas;
 
-    if (horas > 50 && horas < 150)
+    if (horas > 50)
     {
-        sueldo = (valorXHora * horas) + 500;
+        sueldo += 500;
         printf("Por haber trabajado mas de 50 horas recibe un bono de 500. Su sueldo quedaria %d\n", sueldo);
-    }
-    if (horas > 150)
-    {
-        sueldo = (valorXHora * horas) + 1500;
-        printf("Por haber trabajado mas de 150 horas recibe un bono de 1500. Su sueldo quedaria %d\n", sueldo);
+        if (horas > 150)
+        {
+            sueldo += 1500;
+            printf("Por haber trabajado mas de 150 horas recibe un bono de 1500. Su sueldo quedaria %d\n", sueldo);
+        }
     }
     else
     {

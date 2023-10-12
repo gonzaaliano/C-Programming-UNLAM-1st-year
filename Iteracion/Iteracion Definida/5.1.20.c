@@ -7,3 +7,15 @@ Por ejemplo, si se ingresa el número 5 debe mostrar en pantalla:
  *******
  *********
  */
+
+//printf("*");
+//printf("\n");
+//printf(" "); //ESPACIO
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main() {
+
+    
+}

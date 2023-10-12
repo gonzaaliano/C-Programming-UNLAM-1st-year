@@ -8,24 +8,19 @@ precio final (0 no aplica el descuento y 1 aplica el descuento).*/
 
 int main()
 {
-    int codigoProducto;
-    float precioProducto, precioDto;
 
-    printf("Ingrese codigo del producto:\n");
-    scanf("%d", &codigoProducto);
+    int precio, cod;
+
     printf("Ingrese el precio del producto\n");
-    scanf("%f", &precioProducto);
+    scanf("%d", &precio);
 
-    codigoProducto = 0;
-    printf("Producto sin descuento, se mantiene el precio de lista %f\n", precioProducto);
+    printf("Ingrese el codigo: 1 aplica descuento / 0 No aplica descuento\n");
+    scanf("%d", &cod);
 
-    codigoProducto = 1;
-    precioDto = precioProducto - (precioProducto * 1.2);
+    precio = precio - (precio*0.2) * cod;
 
-    printf("El precio del producto con el descuento es: %f", precioDto);
+    printf("El precio final del producto es: %d\n", precio);
 
     system("pause");
     return 0;
 }
-
-//REVISAR

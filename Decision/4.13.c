@@ -16,17 +16,9 @@ int main()
 
     if (nroCatalogo >= 1200 && nroCatalogo <= 90000)
     {
-        if (nroCatalogo >= 12121 && nroCatalogo <= 18081)
+        if (((nroCatalogo >= 12121) && (nroCatalogo <= 18081)) || ((nroCatalogo >= 30012) && (nroCatalogo <= 45565)) || ((nroCatalogo >= 67000) && (nroCatalogo <= 68000)))
         {
             printf("Los articulos que se encuentran entre el 12121 y 18081, estan defectuosos %d\n", nroCatalogo);
-        }
-        if (nroCatalogo >= 30012 && nroCatalogo <= 45565)
-        {
-            printf("Los articulos que se encuentran entre el 30012 y 45565, estan defectuosos %d\n", nroCatalogo);
-        }
-        if (nroCatalogo >= 67000 && nroCatalogo <= 68000)
-        {
-            printf("Los articulos que se encuentran entre el 67000 y 68000, estan defectuosos %d\n", nroCatalogo);
         }
     }
     else

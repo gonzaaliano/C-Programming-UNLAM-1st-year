@@ -4,9 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*Programa Ejercicio 2.2
- Unidad 2 Secuencial*/
-
 int main()
 {
    float nota1, nota2, sumaNotas, notaPromedio; // DECLARACION DE 4 VARIABLES

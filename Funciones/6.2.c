@@ -14,24 +14,50 @@ rango utilizar la función EstaDentroDelRango realizada en el punto anterior.*/
 
 #include <stdio.h>
 #include <stdlib.h>
-LeerYValidar(int, int)
-    EstaDentroDelRango(int, int, int)
+int EstaDentroDelRango(int, int, int);
+int LeerYValidar(int, int);
 
-        int main()
+int main()
 {
-}
+    int num, cant100_500;
 
-EstaDentroDelRango()
-{
-}
+    printf("Ingrese numeros entre 100 y 2000\n");
+    num = LeerYValidar(100, 2000);
 
-LeerYValidar()
-{
-    int num, limiteSuperior, limiteInferior;
+    EstaDentroDelRango(num, 100, 2000);
 
-    do
+    if (EstaDentroDelRango(num, 100, 500))
     {
-        printf("Ingrese numeros enteros\n");
-        scanf("%d", num);
-    } while (num != 99);
+        /* code */
+    }
+    
+
+    
+
+    system("pause");
+    return 0;
+}
+
+LeerYValidar(ls, li)
+{
+
+    int num;
+
+    printf("Ingrese numeros comprendidos dentro del rango\n");
+    while (num != 99)
+    {
+        scanf("%d", &num);
+    }
+
+    return num;
+}
+
+EstaDentroDelRango(numero, ls, li)
+{
+    if (numero <= ls && numero >= li)
+    {
+        return 1;
+    }
+    else
+        return 0;
 }

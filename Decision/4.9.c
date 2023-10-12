@@ -1,5 +1,6 @@
 /*4.9. Confeccionar un programa que permita ingresar un carácter alfanumérico y determine e informe si lo
-ingresado corresponde a una vocal, con el mensaje “VOCAL”. y su correspondiente valor numérico en ASCII. RESUELTO*/
+ingresado corresponde a una vocal, con el mensaje “VOCAL”. y su correspondiente valor numérico en ASCII. 
+RESUELTO*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,6 +30,8 @@ int main()
         printf("El caracter ingresado no es una vocal.");
         break;
     }
+
+    system("pause");
+    return 0;
 }
 
-//PREGUNTAR DE DONDE SACA EL VALOR DE ASCII

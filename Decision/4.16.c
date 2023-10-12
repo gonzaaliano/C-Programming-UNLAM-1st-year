@@ -6,7 +6,8 @@
  código 4; 44: 1 peso la unidad.
 Confeccionar un programa que ingrese como dato el código de un artículo y la cantidad a comprar y se
 informe el importe de la compra, con las siguientes leyendas:
-ARTÍCULO xxxxx CANTIDAD xxxx IMPORTE A PAGAR $ xxxx.xx*/
+ARTÍCULO xxxxx CANTIDAD xxxx IMPORTE A PAGAR $ xxxx.xx
+RESUELTO*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,12 +30,12 @@ int main()
             importeFinal = cantidad * precio;
             printf("ARTICULO %d, CANTIDAD %d, IMPORTE A PAGAR $%d\n", codigo, cantidad, importeFinal);
         }
-        else if ((codigo == 2) || (codigo == 22) || (codigo == 222))
+        if ((codigo == 2) || (codigo == 22) || (codigo == 222))
         {
             if (cantidad == 10)
             {
                 precio = 65;
-                importeFinal = cantidad * precio;
+                importeFinal = precio;
                 printf("ARTICULO %d, CANTIDAD %d, IMPORTE A PAGAR $%d\n", codigo, cantidad, importeFinal);
             }
             else
@@ -44,11 +45,12 @@ int main()
                 printf("ARTICULO %d, CANTIDAD %d, IMPORTE A PAGAR $%d\n", codigo, cantidad, importeFinal);
             }
         }
-        else if ((codigo == 3) || (codigo == 33))
+        if ((codigo == 3) || (codigo == 33))
         {
             if (cantidad > 10)
             {
                 precio = 3;
+                importeFinal = cantidad * precio;
                 importeFinal = importeFinal - (importeFinal * 0.10);
                 printf("ARTICULO %d, CANTIDAD %d, IMPORTE A PAGAR $%d\n", codigo, cantidad, importeFinal);
             }
@@ -59,7 +61,7 @@ int main()
                 printf("ARTICULO %d, CANTIDAD %d, IMPORTE A PAGAR $%d\n", codigo, cantidad, importeFinal);
             }
         }
-        else if ((codigo == 4) || (codigo == 44))
+        if ((codigo == 4) || (codigo == 44))
         {
             precio = 1;
             importeFinal = cantidad * precio;

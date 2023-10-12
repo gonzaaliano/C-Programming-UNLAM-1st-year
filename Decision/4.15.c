@@ -4,7 +4,8 @@
  la caja de 50 cuesta $500.
 Si la compra excede las 100 unidades se efectúa un descuento del 10%.
 NOTA: se aceptan compras entre 1 y 500 DVDs.
-Se pide que se ingrese una cantidad de DVDs que se quiere comprar y calcule e informe el importe a pagar*/
+Se pide que se ingrese una cantidad de DVDs que se quiere comprar y calcule e informe el importe a pagar
+RESUELTO*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,7 +44,7 @@ int main()
         {
             precio = 15;
             montoTotal = (cds * precio);
-            importeFinal = (montoTotal - (precio * 0.10));
+            importeFinal = (montoTotal - (montoTotal * 0.10));
             printf("El importe final con el descuento es de: %d\n", importeFinal);
         }
     }
@@ -56,4 +57,4 @@ int main()
     return 0;
 }
 
-//REVISAR, no calcula porcentaje de dto.
+// REVISAR, no calcula porcentaje de dto.

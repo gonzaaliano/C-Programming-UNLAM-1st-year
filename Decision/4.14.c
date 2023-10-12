@@ -23,7 +23,7 @@ int main()
             importeFinal = (precio - (precio * 0.045));
             printf("El importe final con el descuento es: %d\n", importeFinal);
         }
-        else if (precio >= 55 && precio <= 100)
+        else if (precio <= 100)
         {
             importeFinal = (precio - (precio * 0.08));
             printf("El importe final con el descuento es: %d\n", importeFinal);
