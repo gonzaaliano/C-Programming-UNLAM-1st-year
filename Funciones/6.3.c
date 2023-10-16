@@ -20,68 +20,113 @@ c. Calcular y mostrar la cantidad total de disparos en el centro (de todos los p
 #include <stdio.h>
 #include <stdlib.h>
 
-int cuadrante(int, int);
-int puntaje(int, int, int, int, int);
+int Cuadrante(int, int);
+int Puntaje(int, int, int, int, int);
 
 int main()
 {
-    int participantes, id, disparos = 5, coordx, coordy;
+    int nroParticipante, disparos = 5, coordx, coordy, cantDisparosCentro = 0, cuadrante, cantDisparos1 = 0, cantDisparos2 = 0, cantDisparos3 = 0, cantDisparos4 = 0;
+    int puntajeTotal, puntajeMax = 0;
 
-    printf("Ingrese la cantidad de participantes\n");
-    scanf("%d", &participantes);
+    printf("Ingrese el numero de participante\n");
+    scanf("%d", &nroParticipante);
 
-    for (int i = 1; i <= participantes; i++)
+    while (nroParticipante >= 0)
     {
-        printf("Ingrese el numero de identificacion del participante\n");
-        scanf("%d", &id);
-
-        for (int j = 1; j <= disparos; i++)
+        printf("Ingrese los disparos del participante numero: %d\n", nroParticipante);
+        for (int i = 1; i <= disparos; i++)
         {
             printf("Ingrese las coordenadas del disparo\n");
             scanf("%d%d", &coordx, &coordy);
 
-            cuadrante(coordx, coordy);
+            cuadrante = Cuadrante(coordx, coordy);
 
-            
+            switch (cuadrante)
+            {
+            case 0:
+                cantDisparosCentro++;
+                break;
+            case 1:
+                cantDisparos1++;
+                break;
+            case 2:
+                cantDisparos2++;
+                break;
+            case 3:
+                cantDisparos3++;
+                break;
+            case 4:
+                cantDisparos4++;
+                break;
+            default:
+                break;
+            }
         }
-        
-    }
-    
 
+        puntajeTotal = Puntaje(cantDisparos1, cantDisparos2, cantDisparos3, cantDisparos4, cantDisparosCentro);
+
+        printf("El puntaje total alcanzado por el participante numero: %d fue de %d puntos\n", nroParticipante, puntajeTotal);
+        printf("El participante %d realizo:\n", nroParticipante);
+        printf("Disparos Cuadrante 1: %d\n", cantDisparos1);
+        printf("Disparos Cuadrante 2: %d\n", cantDisparos2);
+        printf("Disparos Cuadrante 3: %d\n", cantDisparos3);
+        printf("Disparos Cuadrante 4: %d\n", cantDisparos4);
+        printf("Disparos en el centro: %d\n", cantDisparosCentro);
+
+        cantDisparos1 = 0;
+        cantDisparos2 = 0;
+        cantDisparos3 = 0;
+        cantDisparos4 = 0;
+
+        if (puntajeTotal > puntajeMax)
+        {
+            puntajeMax = puntajeTotal;
+        }
+
+        printf("Ingrese el numero de participante\n");
+        scanf("%d", &nroParticipante);
+    }
+
+    printf("EL PARTICIPANTE NRO: %d fue el ganador con %d puntos\n", nroParticipante, puntajeMax);
+
+    printf("La cantidad total de disparos en el centro de todos los participantes fue de %d disparos\n", cantDisparosCentro);
+
+    system("pause");
+    return 0;
 }
 
-int cuadrante(coordenadaX, coordenadaY)
+int Cuadrante(int coordenadaX, int coordenadaY)
 {
-    int x, y, cuadrante, centro = 0;
+    int cuadrante;
 
-    if (x > 0 && y > 0)
+    if (coordenadaX > 0 && coordenadaY > 0)
     {
         cuadrante = 1;
     }
-    if (x < 0 && y > 0)
+    if (coordenadaX < 0 && coordenadaY > 0)
     {
         cuadrante = 2;
     }
-    if (x < 0 && y < 0)
+    if (coordenadaX < 0 && coordenadaY < 0)
     {
         cuadrante = 3;
     }
-    if (x > 0 && y < 0)
+    if (coordenadaX > 0 && coordenadaY < 0)
     {
         cuadrante = 4;
     }
-    if (x == 0 && y == 0)
+    if (coordenadaX == 0 && coordenadaY == 0)
     {
-        centro = 1;
+        cuadrante = 0;
     }
 
     return cuadrante;
 }
 
-int puntaje(disparos1, disparos2, disparos3, disparos4, disparoCentro)
+int Puntaje(int disparos1, int disparos2, int disparos3, int disparos4, int disparoCentro)
 {
 
-    int puntajeTotal;
+    int puntajeTotal = 0;
 
     if (disparos1 > 0 || disparos2 > 0)
     {

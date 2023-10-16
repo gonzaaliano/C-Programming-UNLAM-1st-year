@@ -14,47 +14,59 @@ rango utilizar la función EstaDentroDelRango realizada en el punto anterior.*/
 
 #include <stdio.h>
 #include <stdlib.h>
-int EstaDentroDelRango(int, int, int);
 int LeerYValidar(int, int);
+int EstaDentroDelRango(int, int, int);
 
 int main()
 {
-    int num, cant100_500;
+    int num, cant100_500 = 0, cantPares500_1200 = 0, cant1200_2000 = 0;
+    float promedio1200_2000, suma1200_2000;
 
-    printf("Ingrese numeros entre 100 y 2000\n");
     num = LeerYValidar(100, 2000);
 
     EstaDentroDelRango(num, 100, 2000);
 
-    if (EstaDentroDelRango(num, 100, 500))
+    if (EstaDentroDelRango(num, 100, 500) == 1)
     {
-        /* code */
+        cant100_500++;
     }
-    
+    if (EstaDentroDelRango(num, 500, 1200) == 1)
+    {
+        if (num % 2 == 0)
+        {
+            cantPares500_1200++;
+        }
+    }
+    if (EstaDentroDelRango(num, 1200, 2000) == 1)
+    {
+        suma1200_2000 += num;
+        cant1200_2000++;
+    }
 
-    
+    promedio1200_2000 = suma1200_2000 / (float)cant1200_2000;
 
     system("pause");
     return 0;
 }
 
-LeerYValidar(ls, li)
+LeerYValidar(int ls, int li)
 {
 
     int num;
 
-    printf("Ingrese numeros comprendidos dentro del rango\n");
-    while (num != 99)
+    do
     {
+        printf("Ingrese un numero entre %d y %d", li, ls);
         scanf("%d", &num);
-    }
+
+    } while (num != 99);
 
     return num;
 }
 
-EstaDentroDelRango(numero, ls, li)
+EstaDentroDelRango(int numero, int limsup, int liminf)
 {
-    if (numero <= ls && numero >= li)
+    if (numero <= limsup && numero >= liminf)
     {
         return 1;
     }

@@ -10,3 +10,6 @@ pantalla:
 Según la opción deseada debe aparecer en pantalla el resultado, sin borrar el menú. No admitir otros 
 valores de opción. Confeccionar y utilizar una función PARA CADA UNA de las opciones y otra para detectar 
 la condición final.*/
+
+#include <stdio.h>
+#include <stdlib.h>
