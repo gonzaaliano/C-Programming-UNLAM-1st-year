@@ -23,7 +23,7 @@ int main()
     {
         for (int num = 1; num <= 9; num++)
         {
-            printf("%d\n", tabla * num);
+            printf("%d\t", tabla * num);
         }
         printf("\n");
     }

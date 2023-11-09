@@ -15,7 +15,7 @@ Determinar:
 a. El puntaje obtenido por cada participante, detallando cuantos disparos realizó en cada cuadrante.
 b. Mostrar el número del participante ganador y el puntaje obtenido.
 c. Calcular y mostrar la cantidad total de disparos en el centro (de todos los participantes)
-*/
+RESUELTO*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,7 +26,7 @@ int Puntaje(int, int, int, int, int);
 int main()
 {
     int nroParticipante, disparos = 5, coordx, coordy, cantDisparosCentro = 0, cuadrante, cantDisparos1 = 0, cantDisparos2 = 0, cantDisparos3 = 0, cantDisparos4 = 0;
-    int puntajeTotal, puntajeMax = 0;
+    int puntajeTotal, puntajeMax = 0, participanteGanador = 0, intento = 1, cantTotalCentro = 0;
 
     printf("Ingrese el numero de participante\n");
     scanf("%d", &nroParticipante);
@@ -36,7 +36,7 @@ int main()
         printf("Ingrese los disparos del participante numero: %d\n", nroParticipante);
         for (int i = 1; i <= disparos; i++)
         {
-            printf("Ingrese las coordenadas del disparo\n");
+            printf("Ingrese las coordenadas X e Y del disparo %d\n", intento);
             scanf("%d%d", &coordx, &coordy);
 
             cuadrante = Cuadrante(coordx, coordy);
@@ -45,6 +45,7 @@ int main()
             {
             case 0:
                 cantDisparosCentro++;
+                cantTotalCentro++;
                 break;
             case 1:
                 cantDisparos1++;
@@ -61,6 +62,9 @@ int main()
             default:
                 break;
             }
+
+            intento++;
+            
         }
 
         puntajeTotal = Puntaje(cantDisparos1, cantDisparos2, cantDisparos3, cantDisparos4, cantDisparosCentro);
@@ -73,23 +77,27 @@ int main()
         printf("Disparos Cuadrante 4: %d\n", cantDisparos4);
         printf("Disparos en el centro: %d\n", cantDisparosCentro);
 
+        if (puntajeTotal > puntajeMax)
+        {
+            puntajeMax = puntajeTotal;
+            participanteGanador = nroParticipante;
+        }
+
         cantDisparos1 = 0;
         cantDisparos2 = 0;
         cantDisparos3 = 0;
         cantDisparos4 = 0;
+        cantDisparosCentro = 0;
 
-        if (puntajeTotal > puntajeMax)
-        {
-            puntajeMax = puntajeTotal;
-        }
+        intento = 1;
 
         printf("Ingrese el numero de participante\n");
         scanf("%d", &nroParticipante);
     }
 
-    printf("EL PARTICIPANTE NRO: %d fue el ganador con %d puntos\n", nroParticipante, puntajeMax);
+    printf("EL PARTICIPANTE NRO: %d fue el ganador con %d puntos\n", participanteGanador, puntajeMax);
 
-    printf("La cantidad total de disparos en el centro de todos los participantes fue de %d disparos\n", cantDisparosCentro);
+    printf("La cantidad total de disparos en el centro de todos los participantes fue de %d disparos\n", cantTotalCentro);
 
     system("pause");
     return 0;
@@ -138,7 +146,7 @@ int Puntaje(int disparos1, int disparos2, int disparos3, int disparos4, int disp
     }
     if (disparoCentro > 0)
     {
-        puntajeTotal += 100;
+        puntajeTotal += (100 * disparoCentro);
     }
 
     return puntajeTotal;

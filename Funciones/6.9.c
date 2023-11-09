@@ -4,9 +4,21 @@ retornar un 0. Para la validación usar la función del punto 8 que retorna la c
 
 #include <stdio.h>
 #include <stdlib.h>
+int ValidarFecha(int, int, int);
 
 int main()
 {
     system("pause");
     return 0;
+}
+
+int ValidarFecha(int d, int m, int a){
+
+    if ((d >=1) && (d<= 31) )
+    {
+        
+    }
+    
+
+    
 }

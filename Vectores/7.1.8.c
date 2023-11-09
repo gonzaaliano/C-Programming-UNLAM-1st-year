@@ -1,4 +1,10 @@
-/*7.1.8 Se ingresan DNI y nota de un parcial de los alumnos de un curso. El ingreso de datos finaliza con un DNI 
-negativo. Se sabe que como máximo pueden presentarse a rendir 60 alumnos. Mostrar: 
-a. Listado de alumnos con su correspondiente DNI y la nota obtenida (en forma de listado)
-b. La máxima nota obtenida y el DNI de los alumnos que la obtuvieron.*/
+/*7.1.8 Para una carrera de automóviles, se toman los tiempos de clasificación (real, mayor que 0 en segundos) 
+de como máximo 60 autos de carrera inscriptos para la competencia. 
+Los autos se identifican con números correlativos del 1 al 60, quedando sin información aquellos que no 
+participan de la presente carrera.
+Cuando ya no hay más tiempos de clasificación para cargar, se ingresa un auto con número negativo.
+Se solicita determinar:
+a. El número de auto que clasificó en primer lugar.
+b. El número de auto que obtuvo el peor tiempo de clasificación.
+c. La cantidad de autos que superaron el promedio de tiempo de clasificación.
+d. El o los números de autos que no participan de la carrera actual.*/

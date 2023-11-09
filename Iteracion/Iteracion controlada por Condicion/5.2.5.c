@@ -8,66 +8,59 @@
 // • REPROBO LA MATERIA: alguna nota no cumple lo anterior
 // El programa finaliza cuando se ingresa un valor negativo como número de DNI. Al finalizar mostrar la nota
 // promedio de alumnos promocionados.
+//RESUELTO
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// int main()
-// {
-
-//     int dni, nota1, nota2, cantPromocionados = 0;
-//     float sumaPromocionados = 0, promedioPromocionados = 0;
-
-//     while (dni > 0)
-//     {
-//         printf("Ingrese el DNI del alumno\n");
-//         scanf("%d", &dni);
-
-//         printf("Ingrese las notas de los examenes(Examen 1 y Examen 2)\n");
-//         scanf("%d%d", &nota1, &nota2);
-
-//         if (nota1 >= 7 && nota2 >= 7)
-//         {
-//             printf("El alumno con DNI: %d, obtuvo las notas: %d y %d [PROMOCIONA]\n", dni, nota1, nota2);
-//             cantPromocionados++;
-//             sumaPromocionados += nota1 + nota2;
-//         }
-//         if ((nota1 >= 4 && nota1 < 7) && (nota2 >= 4 && nota2 < 7))
-//         {
-//             printf("El alumno con DNI: %d, obtuvo las notas: %d y %d [RINDE EXAMEN FINAL]\n", dni, nota1, nota2);
-//         }
-//         else
-//         {
-//             printf("El alumno con DNI: %d, obtuvo las notas: %d y %d [REPROBO LA MATERIA]\n", dni, nota1, nota2);
-//         }
-//     }
-
-//     promedioPromocionados = sumaPromocionados / (float)cantPromocionados;
-
-//     printf("NOTA PROMEDIO ALUMNOS PROMOCIONADOS: %f\n", promedioPromocionados);
-
-//     system("pause");
-//     return 0;
-// }
-
 int main()
 {
     int dni, nota1, nota2, cantPromocionados = 0;
-    float sumaPromocionados = 0, promedioPromocionados = 0;
+    float promedioPromocionados, sumaPromocionados;
 
-    do
+    printf("INGRESE EL DNI DEL ALUMNO:\n");
+    scanf("%d", &dni);
+
+    while (dni > 0)
     {
 
-        printf("Ingrese el DNI del alumno\n");
+        printf("INGRESE LA NOTA 1 DEL ALUMNO\n");
+        scanf("%d", &nota1);
+
+        printf("INGRESE LA NOTA 2 DEL ALUMNO\n");
+        scanf("%d", &nota2);
+
+        if (nota1 && nota2 >= 7)
+        {
+            printf("EL ALUMNO CON %d, OBTUVO LAS NOTAS %d y %d [PROMOCIONA]\n", dni, nota1, nota2);
+            cantPromocionados++;
+            sumaPromocionados += nota1 + nota2;
+        }
+        if (nota1 && nota2 >= 4)
+        {
+            printf("EL ALUMNO CON %d, OBTUVO LAS NOTAS %d y %d [RINDE EXAMEN FINAL]\n", dni, nota1, nota2);
+        }
+        else
+        {
+            printf("EL ALUMNO CON %d, OBTUVO LAS NOTAS %d y %d [REPROBO LA MATERIA]\n", dni, nota1, nota2);
+        }
+
+        printf("INGRESE EL DNI DEL ALUMNO:\n");
         scanf("%d", &dni);
-
-        printf("Ingrese las notas de los examenes(Examen 1 y Examen 2)\n");
-        scanf("%d%d", &nota1, &nota2);
-
-    } while (dni < 0);
-
-    if (nota1 >= 7 && nota2 >= 7)
-    {
-        /* code */
     }
+
+    if (cantPromocionados > 0)
+    {
+        promedioPromocionados = sumaPromocionados / (float)cantPromocionados;
+        printf("LA CANTIDAD DE ALUMNOS PROMOCIONADOS ES DE %d\n", cantPromocionados);
+        printf("LA SUMATORIA DE NOTAS DE LOS ALUMNOS PROMOCIONADOS ES DE %.2f\n", sumaPromocionados);
+        printf("EL PROMEDIO DE LOS ALUMNOS PROMOCIONADOS ES DE %.2f\n", promedioPromocionados);
+    }
+    else
+    {
+        printf("NO HUBO ALUMNOS PROMOCIONADOS\n");
+    }
+
+    system("pause");
+    return 0;
 }

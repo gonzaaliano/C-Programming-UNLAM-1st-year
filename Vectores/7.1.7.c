@@ -1,10 +1,20 @@
-/*7.1.7 Se ingresan DNI, código de sector (1 a 5) y sueldo de los empleados de una empresa. Se sabe que como 
-máximo la empresa tiene 100 empleados. Se desea:
-a. Cargar los datos de los empleados mediante la función CargaEmpleados. La carga finaliza con un 
-empleado con DNI 99.
-b. Generar un vector con la cantidad de empleados en cada sector mediante la función 
-CuentaPorSector y mostrarlo en forma de listado.
-c. Determinar el importe total a pagar de sueldos mediante la función TotalAPagar.
-d. Volver a mostrar el listado de cantidad de empleados por sector, pero esta vez ordenado de 
-menor a mayor por cantidad de empleados en cada sector.
+/*7.1.7 Confeccionar un programa para:
+a. Generar los vectores necesarios para guardar la información ingresada por teclado. Se ingresa los 
+datos de 300 artículos diferentes. De cada artículo se ingresa los siguientes datos:
+• Código de artículo (int, entre 1 y 500).
+• Clase de artículo (char, ‘A’ o ‘B’ o ‘C’ o ‘D’).
+• Número de depósito donde se encuentra el artículo (int, entre 1 y 100).
+• Stock (int, entre o y 2000).
+• Punto de reposición (int, entre 500 y 1000).
+b. Generar e informar el vector VB, que contenga los códigos de artículos de aquellos que hayan 
+quedado con el saldo igual a cero.
+c. Generar e informar el vector VC, que contengo a los códigos de artículos de aquellos que hayan 
+quedado con stock por debajo del punto de reposición.
+d. Generar e informar el vector VD, que contengo los códigos de artículos de aquellos que están en los 
+depósitos entre el 15 y 50.
+FUNCIONES:
+I. Para generar los vectores del punto a).
+II. Para generar el vector VB.
+III. Para generar el vector VC.
+IV. Para generar el vector VD.
 */

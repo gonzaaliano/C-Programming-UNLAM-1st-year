@@ -1,5 +1,6 @@
 /*5.1.16 Se ingresan DNI y la nota promedio de 10 alumnos. Determinar el DNI del alumno de mayor nota
-promedio (considerar único)*/
+promedio (considerar único)
+RESUELTO*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +8,7 @@ promedio (considerar único)*/
 int main()
 {
 
-    int alumnos = 10, dni;
+    int alumnos = 10, dni, dniNotaMaxima;
     float notaPromedio, notaMaxima = 0;
 
     for (int i = 1; i <= alumnos; i++)
@@ -23,12 +24,13 @@ int main()
         if (notaPromedio >= notaMaxima)
         {
             notaMaxima = notaPromedio;
+            dniNotaMaxima = dni;
         }
     }
 
     if (notaMaxima > 0)
     {
-        printf("El alumno con DNI: %d, obtuvo la nota promedio maxima: %.2f, ", dni, notaMaxima);
+        printf("El alumno con DNI: %d, obtuvo la nota promedio maxima: %.2f, ", dniNotaMaxima, notaMaxima);
     }
 
     system("pause");

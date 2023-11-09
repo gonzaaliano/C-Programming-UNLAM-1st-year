@@ -72,7 +72,7 @@ int LeerYValidar(int li, int ls)
 
     do
     {
-        printf("Ingrese un numero entre %d y %d\n", li, ls);
+        printf("Ingrese un numero entre %d y %d (99 para finalizar)\n", li, ls);
         scanf("%d", &num);
 
         if (num != 99 && !EstaDentroDelRango(num, li, ls))

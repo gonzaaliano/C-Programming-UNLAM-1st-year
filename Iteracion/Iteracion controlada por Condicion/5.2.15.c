@@ -15,6 +15,21 @@
 // c. Porcentaje de mujeres de escuelas técnicas sobre la cantidad de estudiantes que respondieron
 // la encuesta.
 // d. Porcentaje de estudiantes que respondieron que los conocimientos adquiridos eran malos,
-// sobre el total de encuestados.
+// sobre el total de encuestados. promedio ??
 // e. Mayor edad de los estudiantes encuestados.
 // f. Número del colegio con mayor opinión buena sobre los conocimientos adquiridos.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int cantColegios = 0, nroEscuela, cantAlumnosInscriptos = 0, dni, fechanac, edadMax, cantOpinionesBuenas = 0, cantNoTecnico = 0;
+    char especialidad, sexo, opinion;
+    
+    do
+    {
+        printf("Ingrese el numero de")
+    } while (/* condition */);
+    
+}
